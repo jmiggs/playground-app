@@ -1,0 +1,16 @@
+# Local development image (used by compose.yml). Not used by ticketwright,
+# which generates its own environment per ticket.
+FROM ruby:3.3.4
+
+# pg_dump must be at least the server's major version to write
+# db/structure.sql, and Debian bookworm only ships client 15, so install
+# client 16 from the PostgreSQL apt repository.
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends postgresql-common \
+ && /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh -y \
+ && apt-get install -y --no-install-recommends postgresql-client-16 \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+COPY Gemfile Gemfile.lock .ruby-version ./
+RUN bundle install

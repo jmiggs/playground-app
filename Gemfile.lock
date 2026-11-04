@@ -144,6 +144,13 @@ GEM
       racc (~> 1.4)
     nokogiri (1.19.4-x86_64-linux-musl)
       racc (~> 1.4)
+    pg (1.7.0)
+    pg (1.7.0-aarch64-linux)
+    pg (1.7.0-aarch64-linux-musl)
+    pg (1.7.0-arm64-darwin)
+    pg (1.7.0-x86_64-darwin)
+    pg (1.7.0-x86_64-linux)
+    pg (1.7.0-x86_64-linux-musl)
     pp (0.6.4)
       prettyprint
     prettyprint (0.2.0)
@@ -219,14 +226,6 @@ GEM
       rspec-support (>= 3.13.0, < 5.0.0)
     rspec-support (3.13.7)
     securerandom (0.4.1)
-    sqlite3 (2.9.6-aarch64-linux-gnu)
-    sqlite3 (2.9.6-aarch64-linux-musl)
-    sqlite3 (2.9.6-arm-linux-gnu)
-    sqlite3 (2.9.6-arm-linux-musl)
-    sqlite3 (2.9.6-arm64-darwin)
-    sqlite3 (2.9.6-x86_64-darwin)
-    sqlite3 (2.9.6-x86_64-linux-gnu)
-    sqlite3 (2.9.6-x86_64-linux-musl)
     thor (1.5.0)
     thruster (0.1.26)
     thruster (0.1.26-aarch64-linux)
@@ -260,10 +259,10 @@ PLATFORMS
 DEPENDENCIES
   bundler-audit
   debug
+  pg (~> 1.7)
   puma (>= 5.0)
   rails (~> 8.1.4)
   rspec-rails
-  sqlite3 (>= 2.1)
   thruster
   tzinfo-data
 
